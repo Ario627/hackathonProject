@@ -1,65 +1,41 @@
-import Image from "next/image";
+import Link from 'next/link'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-linear-to-b from-[#0f1115] via-[#111827] to-[#0b0d11] text-slate-100">
+      <nav className="container-app py-5 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-11 h-11 bg-amber-600 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-600/30">
+            <span className="text-white text-xl font-bold">U</span>
+          </div>
+          <div>
+            <span className="text-xl font-bold text-white">UMKM</span>
+            <p className="text-xs text-amber-200/80">Konsultan Bisnis Cerdas</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <Link href="/login" className="text-slate-200 hover:text-white transition-colors">Masuk</Link>
+          <Link href="/register" className="btn-primary px-4 py-2 shadow-lg shadow-amber-500/25">Daftar Gratis</Link>
+        </div>
+      </nav>
+
+      <section className="container-app py-16 text-center">
+        <div className="max-w-3xl mx-auto space-y-7">
+          <span className="px-4 py-1.5 bg-amber-500/15 text-amber-200 rounded-full text-sm font-medium border border-amber-500/30">
+            🚀 Gratis untuk UMKM Indonesia
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            Konsultan Bisnis AI untuk <span className="text-gradient">UMKM</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-lg text-slate-300">
+            Tanya apa saja tentang bisnismu, pantau angka penting, dapatkan saran instan.
           </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/register" className="btn-primary px-6 py-3 text-lg shadow-lg shadow-amber-500/25">Mulai Sekarang</Link>
+            <Link href="/login" className="btn-secondary px-6 py-3 text-lg border border-amber-500/30">Sudah Punya Akun</Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </section>
     </div>
-  );
+  )
 }
